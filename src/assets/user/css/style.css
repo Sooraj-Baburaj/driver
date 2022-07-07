@@ -63,6 +63,15 @@ li {
 
 }
 
+.side_menu {
+    background-color: white;
+
+}
+
+.side_menu img {
+    width: 40px;
+}
+
 .side_menu li {
     position: relative;
 }
@@ -232,6 +241,7 @@ header .header_right_info {
 
 .main_contents {
     position: relative;
+    margin-left: 70px;
 }
 
 .table_body {
@@ -667,19 +677,19 @@ footer p {
 .orderLocation {
     flex: 1;
     padding: 10px;
-    background-color: #ffff99;
+    background-color: rgba(0,0,0,0.06)
 }
 
 .orderTime {
     flex: 1;
     padding: 10px;
-    background-color: #ffff99;
+    background-color: rgba(0,0,0,0.06)
 }
 
 .orderRemarks {
     flex: 1;
     padding: 10px;
-    background-color: #ffff99;
+    background-color: rgba(0,0,0,0.06)
 }
 
 .selectedNav {

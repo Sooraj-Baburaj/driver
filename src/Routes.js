@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Loader from "./components/Loader";
-import { } from 'react-router';
-import Dashboard from './components/user/dashboard/Dashboard'
+import {} from "react-router";
+import Dashboard from "./components/user/dashboard/Dashboard";
 import DetailsPage from "./components/user/DetailsPage";
 import Returned from "./components/user/Returned";
 
@@ -22,6 +22,7 @@ const Login = lazy(() => import("./components/login/Login"));
 // const Dashboard = lazy(() => import("./components/user/dashboard"));
 const Intransist = lazy(() => import("./components/user/Intransist"));
 const Delivered = lazy(() => import("./components/user/Delivered"));
+
 const Routes = () => {
   return (
     <Suspense fallback={<Loader />}>
@@ -40,21 +41,37 @@ const Routes = () => {
         <Route exact path="/news/details/:id" component={NewsDetails} />
         <Route exact path="/login" component={Login} />
         <UserGuardRoute exact path="/dashboard" component={Dashboard} />
-        <UserGuardRoute exact path="/dashboard/intransist" component={Intransist} />
-        <UserGuardRoute exact path="/dashboard/delivered" component={Delivered} />
+        <UserGuardRoute
+          exact
+          path="/dashboard/intransist"
+          component={Intransist}
+        />
+        <UserGuardRoute
+          exact
+          path="/dashboard/delivered"
+          component={Delivered}
+        />
         <UserGuardRoute exact path="/dashboard/all" component={Delivered} />
         <UserGuardRoute exact path="/dashboard/returned" component={Returned} />
-        <UserGuardRoute exact path="/dashboard/search/:id" component={DetailsPage} />
-        <UserGuardRoute exact path="/dashboard/:type/details/:id" component={DetailsPage} />
+        <UserGuardRoute
+          exact
+          path="/dashboard/search/:id"
+          component={DetailsPage}
+        />
+        <UserGuardRoute
+          exact
+          path="/dashboard/:type/details/:id"
+          component={DetailsPage}
+        />
       </Switch>
     </Suspense>
-  )
-}
+  );
+};
 
 const UserGuardRoute = ({ component: Component, ...props }) => (
   <Route
     {...props}
-    render={routeProps => {
+    render={(routeProps) => {
       const item = localStorage.getItem("user");
 
       // Do all your conditional tests here
@@ -67,4 +84,4 @@ const UserGuardRoute = ({ component: Component, ...props }) => (
   />
 );
 
-export default Routes
+export default Routes;
