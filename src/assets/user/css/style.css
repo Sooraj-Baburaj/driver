@@ -139,6 +139,17 @@ header .header_right_info {
     padding-left: 20px;
 }
 
+.centerButton {
+    display: flex;
+    width:100vw ;
+    justify-content: center;
+}
+
+.centerButton a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .search_wrap {
     transition: ease-in 0.5s;
     background: #eeeefa;

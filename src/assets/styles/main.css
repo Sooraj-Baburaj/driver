@@ -71,9 +71,20 @@ p {
 .banner_contantpart_outer {
   width: 100%;
   display: flex;
+  font-weight: ;
 }
+
+.take span {
+  font-size: 24px !important;
+}
+
+.take::after {
+  width: 80% !important;
+}
+
 .banner_contantpart {
   width: 40%;
+  z-index: 10000000000000000000000000000;
   left: 20%;
   margin-left: 10.4%;
   display: flex;
@@ -179,6 +190,18 @@ p {
   background-size: contain;
   z-index: 100000000000000000;
   content: "";
+}
+
+.no_after:after {
+  display: none !important;
+}
+.no_before::before {
+  display: none !important;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
 }
 
 .service_section_outer_one {
@@ -418,6 +441,7 @@ h3.double:after {
 
 .service_imagepart {
   width: 100%;
+  z-index: 1000000000000000000000000000000;
 }
 
 .service_img_right {

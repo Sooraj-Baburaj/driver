@@ -5,6 +5,7 @@ import {} from "react-router";
 import Dashboard from "./components/user/dashboard/Dashboard";
 import DetailsPage from "./components/user/DetailsPage";
 import Returned from "./components/user/Returned";
+import ServicesThree from "./components/servicesThree/ServicesThree";
 
 const AboutUs = lazy(() => import("./components/about/AboutUs"));
 const Home = lazy(() => import("./components/home/Home"));
@@ -30,6 +31,7 @@ const Routes = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/about-us" component={AboutUs} />
         <Route exact path="/services" component={service} />
+        <Route exact path="/services-three" component={ServicesThree} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/career" component={Career} />
         <Route exact path="/blog" component={Blog} />
