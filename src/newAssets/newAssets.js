@@ -1,4 +1,5 @@
 import logos from "./Group 1737.png";
+import DashboardLogo from "./Group 436.png";
 import whiteCircle from "./Group 2212.png";
 import serviceBanner from "./Group 6472.png";
 import coreBusiness from "./Group 6536.png";
@@ -52,6 +53,7 @@ const newAssets = {
   supplyChain,
   control,
   serviceThreeBanner,
+  DashboardLogo,
 };
 
 export default newAssets;

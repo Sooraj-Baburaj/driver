@@ -63,10 +63,17 @@ const SideMenu = ({ open, setOpen }) => {
               onMouseLeave={handleLeave}
               onMouseOver={handleMouseOver}
             >
-              <img src={DashboardIcon} alt="dashboard icon" />
+              <div className={classes.menuContent}>
+                <img
+                  className="sidemenu-image"
+                  src={DashboardIcon}
+                  alt="dashboard icon"
+                />
+                <p className={classes.menuHeading}>Dashboard</p>
+              </div>{" "}
             </Link>
           </li>
-          <li
+          {/* <li
             className={clsx(
               pathname === "/dashboard/delivered" && "selectedNav"
             )}
@@ -86,14 +93,10 @@ const SideMenu = ({ open, setOpen }) => {
                 <p className={classes.menuHeading}>Delivered</p>
               </div>
             </Link>
-          </li>
-          <li
-            className={clsx(
-              pathname === "/dashboard/intransist" && "selectedNav"
-            )}
-          >
+          </li> */}
+          <li className={clsx(pathname === "/dashboard/all" && "selectedNav")}>
             <Link
-              to="/dashboard/intransist"
+              to="/dashboard/all"
               onMouseLeave={handleLeave}
               onMouseOver={handleMouseOver}
             >
@@ -103,11 +106,11 @@ const SideMenu = ({ open, setOpen }) => {
                   src={DeliveredIcon}
                   alt="dashboard icon"
                 />
-                <p className={classes.menuHeading}>Intransist</p>
+                <p className={classes.menuHeading}>Track</p>
               </div>
             </Link>
           </li>
-          <li
+          {/* <li
             className={clsx(
               pathname === "/dashboard/returned" && "selectedNav"
             )}
@@ -126,9 +129,9 @@ const SideMenu = ({ open, setOpen }) => {
                 <p className={classes.menuHeading}>Returned</p>
               </div>
             </Link>
-          </li>
+          </li> */}
           {/* <li><a href=""> <i  class="fa fa-truck "></i> Tracking</a></li> */}
-          <li style={{ cursor: "pointer" }}>
+          {/* <li style={{ cursor: "pointer" }}>
             <a
               onMouseLeave={handleLeave}
               onMouseOver={handleMouseOver}
@@ -140,7 +143,7 @@ const SideMenu = ({ open, setOpen }) => {
                 Logout
               </p>
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
       {/* </Drawer> */}

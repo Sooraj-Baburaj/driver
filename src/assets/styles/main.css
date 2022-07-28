@@ -614,7 +614,7 @@ h3.double:after {
 }
 .frontend input[type="text"]:hover {
   border: 1px solid #000;
-  transition: 6s;
+  transition: 0.6s;
 }
 
 .frontend ::placeholder {

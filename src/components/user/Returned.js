@@ -207,8 +207,7 @@ const Returned = () => {
                 onClick={handleDownload}
                 className="btn cls_downloadxl"
               >
-                {" "}
-                <i className="fa fa-download "></i> Download Excel
+                Download
               </Button>
             </li>
           </ul>

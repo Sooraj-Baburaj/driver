@@ -155,6 +155,13 @@ input[type=number] {
   font-size: 12px;
 }
 
+
+table, td, th {
+  border: none !important;
+  border-width: 0px !important;
+  border-top: none !important;
+}
+
 .PhoneInputInput {
   border-radius: 50px !important;
   padding: 15px 20px !important;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // import './assets/styles/mysass.scss'
 import Header from "./components/user/Header";
 import Footer from "./components/user/Footer";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
 import Routes from "./Routes";
 import { Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -44,6 +44,13 @@ function UserEnd() {
   };
   const classes = useStyles();
   const [open, setOpen] = useState(true);
+  const { pathname } = useLocation();
+
+  const [name, setName] = useState(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const initialValue = user ? user.Username : "";
+    return initialValue;
+  });
 
   return (
     <div className={"userend"}>
@@ -69,12 +76,28 @@ function UserEnd() {
                 class="col_dlp_transist clearfix"
               >
                 <ul class="tab_clp">
-                  <li>
-                    <Link to="/dashboard">Dashboard</Link>
-                  </li>
-                  <li>
-                    <Link to="/dashboard/all">custom report</Link>
-                  </li>
+                  {pathname === "/dashboard" ? (
+                    <h1
+                      style={{
+                        textAlign: "left",
+                        fontWeight: 300,
+                        margin: "20px 0 0 94px",
+                      }}
+                      className="title"
+                    >{`Hello ${name}`}</h1>
+                  ) : (
+                    <>
+                      <li>
+                        <Link to="/dashboard/intransist">Intransit</Link>
+                      </li>
+                      <li>
+                        <Link to="/dashboard/delivered">Delivered</Link>
+                      </li>
+                      <li>
+                        <Link to="/dashboard/returned">Return</Link>
+                      </li>
+                    </>
+                  )}
                 </ul>
               </section>
               <Routes />

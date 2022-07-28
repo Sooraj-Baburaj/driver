@@ -6,3 +6,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+table, td, th, tbody {
+  border: none !important;
+  border-width: 0px !important;
+  border-top: none !important;
+}
+
+.table-bordered>:not(caption)>* {
+  border-width: 0px !important;
+}
