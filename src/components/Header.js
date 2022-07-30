@@ -12,12 +12,18 @@ import {
   faInstagram,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
+import Dropdown from "react-bootstrap/Dropdown";
 
 const Header = () => {
   const { pathname } = useLocation();
   const matches840 = useMediaQuery("(max-width:840px)");
 
   const [isMobile, setIsMobile] = useState(false);
+  const [services, setServices] = useState("Services");
+
+  const handleChange = (e) => {
+    console.log(e, "hiii");
+  };
 
   useEffect(() => {
     if (window.screen.width > 758) {
@@ -44,6 +50,12 @@ const Header = () => {
         break;
       case "/services":
         setActive({ services: true });
+        break;
+      case "/services-2":
+        setActive({ servicesTwo: true });
+        break;
+      case "/services-3":
+        setActive({ servicesThree: true });
         break;
       case "/clientele":
         setActive({ clientele: true });
@@ -130,8 +142,69 @@ const Header = () => {
                     <li className={clsx(active.about_us && "menu_active")}>
                       <Link to="/about-us">About Us</Link>
                     </li>
-                    <li className={clsx(active.services && "menu_active")}>
+                    {/* <li className={clsx(active.services && "menu_active")}>
                       <Link to="/services">Services</Link>
+                    </li> */}
+                    <li>
+                      <Dropdown
+                        className={`header-dropdown ${clsx(
+                          active.services
+                            ? "menu_active"
+                            : active.servicesTwo
+                            ? "menu_active"
+                            : active.servicesThree && "menu_active"
+                        )}`}
+                      >
+                        <Dropdown.Toggle
+                          style={{
+                            fontSize: "clamp(13px, 1vw, 17px)",
+                            fontWeight: "600",
+                          }}
+                          variant
+                          id="dropdown-basic"
+                        >
+                          SERVICES
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                          <Dropdown.Item
+                            style={{
+                              color: clsx(
+                                active.services
+                                  ? "#d01a38 !important"
+                                  : "rgba(0,0,0,0.6)"
+                              ),
+                            }}
+                            href="/services"
+                          >
+                            SERVICES 1
+                          </Dropdown.Item>
+                          <Dropdown.Item
+                            style={{
+                              color: clsx(
+                                active.servicesTwo
+                                  ? "#d01a38 !important"
+                                  : "rgba(0,0,0,0.6)"
+                              ),
+                            }}
+                            href="/services-2"
+                          >
+                            SERVICES 2
+                          </Dropdown.Item>
+                          <Dropdown.Item
+                            style={{
+                              color: clsx(
+                                active.servicesThree
+                                  ? "#d01a38 !important"
+                                  : "rgba(0,0,0,0.6)"
+                              ),
+                            }}
+                            href="/services-3"
+                          >
+                            SERVICES 3
+                          </Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
                     </li>
                     <li className={clsx(active.clientele && "menu_active")}>
                       <Link to="/clientele">Clientele</Link>

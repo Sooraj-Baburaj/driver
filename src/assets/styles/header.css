@@ -39,7 +39,7 @@
   align-items: center;
 }
 .menu_active a{
-  color: #ce2e33 !important;
+  color: #ce2e33 ;
   /* border-bottom: #ce2e33 solid 2px !important; */
 }
 .stellarnav {
