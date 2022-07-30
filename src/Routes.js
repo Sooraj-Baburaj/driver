@@ -31,9 +31,9 @@ const Routes = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about-us" component={AboutUs} />
-        <Route exact path="/services" component={service} />
-        <Route exact path="/services-2" component={ServicesTwo} />
-        <Route exact path="/services-3" component={ServicesThree} />
+        <Route exact path="/warehouse-management" component={service} />
+        <Route exact path="/fleet-and-transportation" component={ServicesTwo} />
+        <Route exact path="/3PL-consultation" component={ServicesThree} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/career" component={Career} />
         <Route exact path="/blog" component={Blog} />

@@ -48,13 +48,13 @@ const Header = () => {
       case "/about-us":
         setActive({ about_us: true });
         break;
-      case "/services":
+      case "/warehouse-management":
         setActive({ services: true });
         break;
-      case "/services-2":
+      case "/fleet-and-transportation":
         setActive({ servicesTwo: true });
         break;
-      case "/services-3":
+      case "/3PL-consultation":
         setActive({ servicesThree: true });
         break;
       case "/clientele":
@@ -170,38 +170,36 @@ const Header = () => {
                           <Dropdown.Item
                             style={{
                               color: clsx(
-                                active.services
-                                  ? "#d01a38 !important"
-                                  : "rgba(0,0,0,0.6)"
+                                active.services ? "#d01a38" : "rgba(0,0,0,0.8)"
                               ),
                             }}
-                            href="/services"
+                            href="/warehouse-management"
                           >
-                            SERVICES 1
+                            WAREHOUSE MANAGEMENT
                           </Dropdown.Item>
                           <Dropdown.Item
                             style={{
                               color: clsx(
                                 active.servicesTwo
-                                  ? "#d01a38 !important"
-                                  : "rgba(0,0,0,0.6)"
+                                  ? "#d01a38"
+                                  : "rgba(0,0,0,0.8)"
                               ),
                             }}
-                            href="/services-2"
+                            href="/fleet-and-transportation"
                           >
-                            SERVICES 2
+                            FLEET & TRANSPORTATION
                           </Dropdown.Item>
                           <Dropdown.Item
                             style={{
                               color: clsx(
                                 active.servicesThree
-                                  ? "#d01a38 !important"
-                                  : "rgba(0,0,0,0.6)"
+                                  ? "#d01a38"
+                                  : "rgba(0,0,0,0.8)"
                               ),
                             }}
-                            href="/services-3"
+                            href="/3PL-consultation"
                           >
-                            SERVICES 3
+                            3PL CONSULTATION
                           </Dropdown.Item>
                         </Dropdown.Menu>
                       </Dropdown>
