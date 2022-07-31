@@ -725,3 +725,7 @@ footer p {
 .dropdown-item:active {
   background: white;
 }
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}

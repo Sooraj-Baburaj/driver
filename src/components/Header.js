@@ -20,6 +20,13 @@ const Header = () => {
 
   const [isMobile, setIsMobile] = useState(false);
   const [services, setServices] = useState("Services");
+  const [show, setShow] = useState(false);
+  const showDropdown = (e) => {
+    setShow(!show);
+  };
+  const hideDropdown = (e) => {
+    setShow(false);
+  };
 
   const handleChange = (e) => {
     console.log(e, "hiii");
@@ -147,6 +154,9 @@ const Header = () => {
                     </li> */}
                     <li>
                       <Dropdown
+                        show={show}
+                        onMouseEnter={showDropdown}
+                        onMouseLeave={hideDropdown}
                         className={`header-dropdown ${clsx(
                           active.services
                             ? "menu_active"
@@ -166,7 +176,11 @@ const Header = () => {
                           SERVICES
                         </Dropdown.Toggle>
 
-                        <Dropdown.Menu>
+                        <Dropdown.Menu
+                          show={show}
+                          onMouseEnter={showDropdown}
+                          onMouseLeave={hideDropdown}
+                        >
                           <Dropdown.Item
                             style={{
                               color: clsx(
